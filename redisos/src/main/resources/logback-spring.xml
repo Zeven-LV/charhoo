@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+	<springProperty scope="context" name="logLevel" source="log.level"/>
+	<springProperty scope="context" name="logPath" source="log.path"/>
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx"
+					converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+	<!-- 彩色日志格式 -->
+	<property name="LOG_PATTERN"
+			  value="${LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+
+	<!--  测试环境日志配置       -->
+	<springProfile name="test">
+		<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<file>${logPath}redisos.log</file>
+			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+				<fileNamePattern>${logPath}redisos.log-%d{yyyy-MM-dd}</fileNamePattern>
+			</rollingPolicy>
+			<encoder>
+				<pattern>[ETIMS-APP] %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			</encoder>
+		</appender>
+		<root level="${logLevel}">
+			<appender-ref ref="FILE" />
+		</root>
+	</springProfile>
+
+	<!--  开发环境日志配置       -->
+	<springProfile name="dev">
+		<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+			<encoder>
+				<pattern>${LOG_PATTERN}</pattern>
+				<charset>utf8</charset>
+			</encoder>
+		</appender>
+		<root level="debug">
+			<appender-ref ref="CONSOLE" />
+		</root>
+	</springProfile>
+
+
+
+</configuration>
