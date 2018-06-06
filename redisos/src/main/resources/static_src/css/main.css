@@ -1,0 +1,18 @@
+.left-memu{
+    width: 100px;
+    height: 100%;
+}
+
+.memu-item{
+    margin-top: 40px;
+    width: 80px;
+    height: 80px;
+}
+.memu-item .on{
+    background-color: darkgray;
+}
+.right-content{
+    margin-left: 100px;
+    width: 100%;
+    height: 100%;
+}

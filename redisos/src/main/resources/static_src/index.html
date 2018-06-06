@@ -3,116 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>redisos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="full-screen" content="yes">
-    <meta name="format-detection" content="telephone=no,email=no">
-    <meta name="full-screen" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <script src="https://api.map.baidu.com/api?v=2.0&ak=F510946b895547b54bb0db381c29e197&s=1"></script>
-    <script src="js/libs/require.js" data-main="main.js"></script>
-    <script>require.loadCss([{src:"css/common.css"},{src:"css/index.css"}]);</script>
+    <script>require.loadCss([{src:"css/index.css"}]);</script>
 </head>
 <body id="js/index.js">
-<div class="main-content" style="visibility:hidden;">
-    <div class="top-header-tab">
-        <div class="tab-header">
-            <div class="tab-header-item active">地图</div>
-            <div class="tab-header-item">列表</div>
-        </div>
-        <span id="search-ico" class="search-icon"></span>
-    </div>
-    <div class="main-div">
-        <div class="main-item active map-widgets">
-            <div style="width:100%;height:100%;" id="map-div"></div>
-            <div class="map-switcher" id="map-s-s"></div>
-            <div class="validate-btn"></div>
-            <div id="map-control" class="map-control">
-                <div id="zoomin" class="map-zoom-in"></div>
-                <div id="zoomout" class="map-zoom-out"></div>
-            </div>
-            <div class="switcher-con" id="switcher-div">
-                <div class="switch-item" id="satellite">
-                    <img src="images/index/satellite.png">
-                    <div class="text">卫星图</div>
-                </div>
-                <div class="switch-item" id="normal-map">
-                    <img src="images/index/normal.png">
-                    <div class="text">路况</div>
-                </div>
-            </div>
-            <div class="map-loc" id="map-loc">
-                <div class="ver"></div>
-                <div class="hor"></div>
-                <div class="map-loc-in">
-                    <div class="map-loc-in2"></div>
-                </div>
-            </div>
-            <div id="veh-detail" class="veh-detail" :class="isShow">
-                <div class="veh-line" style="line-height:40px;border-bottom:1px solid #efefef;">
-                    <span :class="statusClass"></span>
-                    <span>{{item.continuedTxt}}</span>
-                </div>
-                <div class="veh-line"><span>当前车速:{{item.dir}} {{item.gpsspeed}}公里/小时</span></div>
-                <div class="veh-line"><span>{{item.locationTxt}}</span></div>
-                <div class="veh-line"><span>定位时间:{{item.gpstime}}</span></div>
-                <div class="track-btn"><span><a @click="goTrack" class="op-link">轨迹回放</a></span></div>
-                <div class="close" @click="closeMe"></div>
-            </div>
-        </div>
-        <div class="main-item">
-            <ul class="vehicle-list" id="veh-list">
-                <template v-if="!isEmpty">
-                    <li is="my-row" v-for="one in list" :item="one"></li>
-                </template>
-                <!--
-                <li class="vehicle-item">
-                    <div class="veh-vno">京A12345</div>
-                    <div class="veh-line"><span class="status online"></span> <span>已在线12小时3分</span></div>
-                    <div class="veh-line"><span>当前位置:北京市海淀区西北旺西路</span></div>
-                </li>
-                <li class="vehicle-item">
-                    <div class="veh-vno">京A12345</div>
-                    <div class="veh-line"><span class="status offline"></span> <span>已离线1天12小时3分</span></div>
-                    <div class="veh-line"><span>最后位置:北京市海淀区西北旺西路</span></div>
-                </li>
-                <li class="vehicle-item">
-                    <div class="veh-vno">京A12345</div>
-                    <div class="veh-line"><span class="status except"></span> <span>已持续2小时3分</span></div>
-                    <div class="veh-line"><span>报警位置:北京市海淀区西北旺西路</span></div>
-                </li>
-                -->
-            </ul>
-        </div>
-    </div>
-    <div class="filter-div" id="filter-div">
-        <div class="filter-header">
-            <span class="back-btn" id="back-btn">返回</span>
-            <span style="color:#666;">筛选</span>
-            <span class="ok-btn" id="ok-btn">确定</span>
-        </div>
-        <section class="form-area" v-if="isHome">
-            <div class="form-item">
-                <label>车牌号</label><input v-model="vno" type="text" placeholder="请输入车牌号" name="vno">
-            </div>
-            <div class="form-item">
-                <label>我的车队</label><span @click="selectNode" class="arrow active">{{nodeNames}}</span>
-            </div>
-        </section>
-        <section class="form-area" v-if="!isHome">
-            <div class="form-item" style="margin-bottom:10px;border-bottom:1px solid transparent;">
-                <div class="group-name">{{nodeNames}}</div>
-            </div>
-            <div style="position:absolute;top:76px;left:0;right:0;bottom:0;overflow:auto;" v-if="hasChild">
-                <div is="group-node" v-for="one in item.children" :item="one"></div>
-            </div>
-        </section>
-    </div>
-</div>
-<div class="main-content" id="track-div">
-    <iframe id="track-frame" name="track-frame" frameborder="0" class="track-frame"></iframe>
+<div>
+    redisos
+    <button value="in">进入系统</button>
 </div>
 </body>
 </html>
