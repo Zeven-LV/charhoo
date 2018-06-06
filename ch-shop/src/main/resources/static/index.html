@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport"
+	content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>商城</title>
+<link rel="stylesheet" type="text/css" href="./css/baseall.css">
+<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+<script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    	$(window).load(function(){
+    		$(".loading").addClass("loader-chanage")
+    		$(".loading").fadeOut(300)
+    	})
+    </script>
+<style type="text/css"></style>
+</head>
+<!--loading页开始-->
+<body>
+	<div class="loading loader-chanage" style="display: none;">
+		<div class="loader">
+			<div class="loader-inner pacman">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+
+	<!--loading页结束-->
+
+
+
+	<header class="page-header">
+		<h3>商城</h3>
+	</header>
+
+	<div class="contaniner fixed-contb">
+		<figure
+			class="ban swiper-container swiper-container-horizontal swiper-container-android">
+			<ul class="swiper-wrapper"
+				style="transition-duration: 0ms; transform: translate3d(-1960px, 0px, 0px);">
+				<li class="swiper-slide swiper-slide-duplicate"
+					data-swiper-slide-index="2" style="width: 980px;"><a
+					href="index.html">
+						<img src="./images/head/index-ban03.png">
+				</a></li>
+				<li class="swiper-slide swiper-slide-prev"
+					data-swiper-slide-index="0" style="width: 980px;"><a
+					href="http://www.17sucai.com/preview/420849/2016-03-17/%E5%95%86%E5%9F%8E/index.html#">
+						<img src="./images/head/index-ban01.png">
+				</a></li>
+				<li class="swiper-slide swiper-slide-active"
+					data-swiper-slide-index="1" style="width: 980px;"><a
+					href="http://www.17sucai.com/preview/420849/2016-03-17/%E5%95%86%E5%9F%8E/index.html#">
+						<img src="./images/head/index-ban02.png">
+				</a></li>
+				<li class="swiper-slide swiper-slide-next"
+					data-swiper-slide-index="2" style="width: 980px;"><a
+					href="http://www.17sucai.com/preview/420849/2016-03-17/%E5%95%86%E5%9F%8E/index.html#">
+						<img src="./images/head/index-ban03.png">
+				</a></li>
+				<li class="swiper-slide swiper-slide-duplicate"
+					data-swiper-slide-index="0" style="width: 980px;"><a
+					href="http://www.17sucai.com/preview/420849/2016-03-17/%E5%95%86%E5%9F%8E/index.html#">
+						<img src="./images/head/index-ban01.png">
+				</a></li>
+			</ul>
+		</figure>
+
+		<section class="shop">
+			<h3>
+				<a
+					href="http://www.17sucai.com/preview/420849/2016-03-17/%E5%95%86%E5%9F%8E/index.html#">
+					服装 <span><img src="./images/channel/right.png"></span>
+				</a>
+			</h3>
+			<dl>
+				<dd>
+					<a
+						href="./special/special.html">
+						<img src="./images/channelInfo/index-ph01.png"> <b>男装</b>
+					</a>
+				</dd>
+				<dd>
+					<a
+						href="./special/special.html">
+						<img src="./images/channelInfo/index-ph02.png"> <b>女装</b>
+					</a>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="shop">
+			<h3>
+				<a
+					href="./special/special.html">
+					食品 <span><img src="./images/channel/right.png"></span>
+				</a>
+			</h3>
+			<dl>
+				<dd>
+					<a
+						href="./special/special.html">
+						<img src="./images/channelInfo/index-03.png"> <b>切糕</b>
+					</a>
+				</dd>
+				<dd>
+					<a
+						href="http://www.17sucai.com/preview/420849/2016-03-17/%E5%95%86%E5%9F%8E/list.html">
+						<img src="./images/channelInfo/index-ph04.png"> <b>酥饼</b>
+					</a>
+				</dd>
+			</dl>
+		</section>
+	</div>
+
+	<footer class="page-footer fixed-footer"></footer>
+
+
+
+	<script src="./js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var mySwiper = new Swiper('.swiper-container',{
+				    loop: true,
+				    speed:1000,
+					autoplay: 2000
+				  });
+		})
+	</script>
+
+</body>
+</html>
