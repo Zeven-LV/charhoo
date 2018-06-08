@@ -5,8 +5,14 @@ define(['jquery'],function($) {
     function Page(){
         var that=this;
         this.init=function(){
-            console.log(100001)
+            that.bindEvent();
         };
+
+        this.bindEvent = function () {
+            $("#goin-system").click(function () {
+                window.location = "home.html"
+            });
+        }
     }
     return new Page();
 });

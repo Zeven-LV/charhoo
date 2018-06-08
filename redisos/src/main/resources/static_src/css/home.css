@@ -1,0 +1,31 @@
+.left-memu{
+    position: absolute;
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background-color: #333333;
+}
+
+.memu-item{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 70px;
+    height: 70px;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    line-height: 70px;
+    text-align: center;
+    color: #ffffff;
+}
+.memu-item .on{
+    background-color: darkgray;
+}
+.right-content{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 100%;
+    height: 100%;
+}
