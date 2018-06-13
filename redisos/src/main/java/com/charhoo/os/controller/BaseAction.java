@@ -27,8 +27,28 @@ public class BaseAction {
 	public Object stringAction(@RequestParam(value = "action") String action,
 							 @RequestParam(value = "key") String key ,
 							 @RequestParam(value = "value") String value ,HttpServletRequest request) {
-
+		log.info(" action:{},key:{},value:{};",action, key, value);
 		return baseService.stringAction(action, key, value);
 
 	}
+
+	@RequestMapping(value = "/hash", method = RequestMethod.GET)
+	public Object hashAction(@RequestParam(value = "action") String action,
+							 @RequestParam(value = "key") String key ,
+							 @RequestParam(value = "value") String value ,HttpServletRequest request) {
+		log.info(" action:{},key:{},value:{};",action, key, value);
+		return baseService.hashAction(action, key, value);
+
+	}
+
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public Object listAction(@RequestParam(value = "action") String action,
+							 @RequestParam(value = "key") String key ,
+							 @RequestParam(value = "value") String value ,HttpServletRequest request) {
+		log.info(" action:{},key:{},value:{};",action, key, value);
+		return baseService.listAction(action, key, value);
+
+	}
+
+
 }

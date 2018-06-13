@@ -1,4 +1,4 @@
-.left-memu{
+.left-menu{
     position: absolute;
     padding-top: 20px;
     top: 0;
@@ -8,7 +8,7 @@
     background-color: #333333;
 }
 
-.memu-item{
+.menu-item{
     margin-top: 10px;
     margin-left: 10px;
     width: 70px;
@@ -19,8 +19,8 @@
     text-align: center;
     color: #ffffff;
 }
-.memu-item .on{
-    background-color: darkgray;
+.on{
+    background-color: #000000;
 }
 .right-content{
     position: absolute;
