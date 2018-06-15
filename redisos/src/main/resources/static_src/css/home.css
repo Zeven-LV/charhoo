@@ -22,10 +22,20 @@
 .on{
     background-color: #000000;
 }
+
+.select{
+    border: 5px solid #3385ff;
+    color: #3385ff;
+}
 .right-content{
     position: absolute;
     top: 0;
     left: 100px;
+    width: 80%;
+    height: 100%;
+}
+
+.center-iframe{
     width: 100%;
     height: 100%;
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>redisos</title>
+    <script src="js/require.js" data-main="js/main.js"></script>
+    <script>require.loadCss([{src:"css/operate.css"}]);</script>
+</head>
+<body id="js/operate.js">
+<div class="frame-box">
+    <div class="options">
+        数据类型
+        <select id="data-type" >
+            <option value="string">string</option>
+            <option value="hash">hash</option>
+            <option value="list">list</option>
+            <option value="set">set</option>
+            <option value="sortset">sortset</option>
+        </select>
+
+        action
+        <input type="text" class="request-param" id="action" name="action">
+
+        key
+        <input type="text" class="request-param" id="key" name="key">
+
+        value
+        <input type="text" class="request-param" id="value" name="value">
+
+        <button id="submit" value="operate">operate</button>
+    </div>
+    <div id="result" class="result">
+        操作结果
+    </div>
+</div>
+</body>
+</html>

@@ -12,9 +12,11 @@ define(['jquery'],function($) {
             }).mouseleave(function () {
                 $(this).removeClass("on");
             }).click(function () {
-                var model = $(this).text();
-
-                $(".right-content").text(model);
+                $(this).siblings().removeClass("select");
+                $(this).addClass("select");
+                var model = $(this).prop("id");
+                var src = model+".html";
+                $(".center-iframe").prop("src",src);
             });
         }
     }

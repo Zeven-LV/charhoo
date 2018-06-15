@@ -1,0 +1,20 @@
+.frame-box{
+    height: 100%;
+}
+
+.options{
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+}
+
+.request-param{
+    width: 150px;
+}
+
+.result{
+    width: 80%;
+    height: 80%;
+    border: 1px solid #000000;
+    margin-top: 20px;
+    padding: 20px 20px 20px 20px;
+}
