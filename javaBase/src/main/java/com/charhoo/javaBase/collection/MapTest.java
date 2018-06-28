@@ -11,6 +11,9 @@ public class MapTest {
         System.out.println(Integer.toBinaryString(keyHash));
         System.out.println(Integer.toBinaryString(15));
         System.out.println(15&keyHash);
+        /**
+         * 通过volatile关键字+synchronized代码块
+         */
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
     }
 

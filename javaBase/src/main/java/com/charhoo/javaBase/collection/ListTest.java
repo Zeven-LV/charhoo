@@ -23,6 +23,10 @@ public class ListTest {
 		 * 对first和last的操作
 		 */
 		List<String> link = new LinkedList<String>();
+        /**
+         * 线程安全的，通过synchronized方法实现
+         *
+         */
 		Vector<String> vector = new Vector<String>();
 	}
 
