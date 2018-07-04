@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/monitor")
-public class MonitorAction {
+public class MonitorController {
 	
 	@Autowired
 	private MonitorService monitorService;
 
-	private static final Logger log = LoggerFactory.getLogger(MonitorAction.class);
+	private static final Logger log = LoggerFactory.getLogger(MonitorController.class);
 	
 	/**
 	 * redis集群节点状态
@@ -26,7 +26,6 @@ public class MonitorAction {
 	public Object clusterNodes(HttpServletRequest request) {
 		log.info(" ");
 		return monitorService.clusterNodes();
-
 	}
 
 

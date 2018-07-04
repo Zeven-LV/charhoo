@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/log")
-public class LogAction {
+public class LogController {
 	
 	@Autowired
 	private BaseService baseService;
 
-	private static final Logger log = LoggerFactory.getLogger(LogAction.class);
+	private static final Logger log = LoggerFactory.getLogger(LogController.class);
 	
 	/**
 	 * redis基本操作日志
