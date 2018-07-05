@@ -1,4 +1,4 @@
-package com.javaBase.io;
+package com.charhoo.javaBase.io;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -11,7 +11,7 @@ import java.nio.file.StandardOpenOption;
 
 /**
  * 
- * ×èÈûÊ½
+ * ï¿½ï¿½ï¿½ï¿½Ê½
  * 
  * @author feng
  *
@@ -43,7 +43,7 @@ public class TestNio {
 					buf.clear();
 				}
 				
-				//½ÓÊÜ·þÎñÆ÷ÐÅÏ¢
+				//ï¿½ï¿½ï¿½Ü·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 				sChannle.shutdownOutput();
 				int len = 0;
 				while((len = sChannle.read(buf)) != -1){
@@ -84,8 +84,8 @@ public class TestNio {
 					buf.clear();
 				}
 				
-				//·¢ËÍ¸ø¿Í»§¶Ë
-				buf.put("·þÎñÆ÷½ÓÊÕÊý¾Ý³É¹¦".getBytes());
+				//ï¿½ï¿½ï¿½Í¸ï¿½ï¿½Í»ï¿½ï¿½ï¿½
+				buf.put("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³É¹ï¿½".getBytes());
 				buf.flip();
 				sChannle.write(buf);
 				

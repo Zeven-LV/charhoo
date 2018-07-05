@@ -1,25 +1,22 @@
-package com.javaBase.io;
+package com.charhoo.javaBase.io;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Scanner;
 
 /**
- * ·Ç×èÈû Ê½
- * nio£»Èý¸öºËÐÄ£º1£¬Í¨µÀ£¬£¨selectChannle£©2£¬»º³å£¬3£¬Ñ¡ÔñÆ÷
- * selectChannle£º1.socketChannle 2£¬ServerSocketChannle 3£¬datagramChannle  4,Pipe.sinkChannle, 5,Pipe.socketChannle
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ê½
+ * nioï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½1ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½selectChannleï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½å£¬3ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½
+ * selectChannleï¿½ï¿½1.socketChannle 2ï¿½ï¿½ServerSocketChannle 3ï¿½ï¿½datagramChannle  4,Pipe.sinkChannle, 5,Pipe.socketChannle
  * 
- * nioÖ»ÊÊÓÃÓëÍøÂçio
+ * nioÖ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½io
  * 
  * @author feng
  *
@@ -41,7 +38,7 @@ public class TestNio2 {
 			try {
 				SocketChannel sChannle = SocketChannel.open(new InetSocketAddress("127.0.0.1", 8999));
 				
-				//ÇÐ»»·Ç×èÈûÄ£Ê½
+				//ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
 				sChannle.configureBlocking(false);
 				
 				
@@ -79,19 +76,19 @@ public class TestNio2 {
 				ssChannle.configureBlocking(false);
 				ssChannle.bind(new InetSocketAddress(8999));
 				
-				//»ñÈ¡Ñ¡ÔñÆ÷
+				//ï¿½ï¿½È¡Ñ¡ï¿½ï¿½ï¿½ï¿½
 				Selector selector = Selector.open();
 				
-				//°ÑÍ¨µÀ×¢²áµ½Ñ¡ÔñÆ÷,²¢¼àÌý½ÓÊÜ×´Ì¬
+				//ï¿½ï¿½Í¨ï¿½ï¿½×¢ï¿½áµ½Ñ¡ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬
 				ssChannle.register(selector, SelectionKey.OP_ACCEPT);
 				
-				//ÂÖÑ¯»ñÈ¡Ñ¡ÔñÆ÷ÉÏ×¼±¸¾ÍÐ÷µÄÊÂ¼þ
+				//ï¿½ï¿½Ñ¯ï¿½ï¿½È¡Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 				while(selector.select() > 0){
-					//»ñÈ¡ËùÓÐÑ¡ÔñÊÂ¼þ×´Ì¬
+					//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Â¼ï¿½×´Ì¬
 					Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 					while(keys.hasNext()){
 						SelectionKey key = keys.next();
-						//Èô½ÓÊÜ¾ÍÐ÷£¬»ñÈ¡¿Í»§¶ËÁ¬½Ó
+						//ï¿½ï¿½ï¿½ï¿½ï¿½Ü¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						if(key.isAcceptable()){
 							SocketChannel sChannle = ssChannle.accept();
 							sChannle.configureBlocking(false);
@@ -107,7 +104,7 @@ public class TestNio2 {
 							}
 						}
 					}
-					//È¡ÏûÑ¡Ôñ¼ü
+					//È¡ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½
 					keys.remove();
 				}
 			

@@ -1,4 +1,4 @@
-package com.javaBase.io;
+package com.charhoo.javaBase.io;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -22,7 +22,7 @@ import java.util.Set;
 
 
 /**
- * Ò»  ×Ö·û¼¯ CharSet
+ * Ò»  ï¿½Ö·ï¿½ï¿½ï¿½ CharSet
  * @author feng
  *
  */
@@ -43,18 +43,18 @@ public class TestBuffer3 {
 		CharsetDecoder de = cs1.newDecoder();
 		
 		CharBuffer cb = CharBuffer.allocate(1024);
-		cb.put("ÓªÑø¿ìÏß");
+		cb.put("Óªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		cb.flip();
 		
 		
 		try {
-			//±àÂë
+			//ï¿½ï¿½ï¿½ï¿½
 			ByteBuffer enBuf = en.encode(cb);
 			while(enBuf.hasRemaining()){
 				System.out.println(enBuf.get());
 			}
 			
-			//½âÂë
+			//ï¿½ï¿½ï¿½ï¿½
 			enBuf.flip();
 			CharBuffer deBuf = de.decode(enBuf);
 			System.out.println(deBuf.toString());

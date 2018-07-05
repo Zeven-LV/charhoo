@@ -1,4 +1,4 @@
-package com.javaBase.servlet;
+package com.charhoo.javaBase.servlet;
 
 import java.applet.Applet;
 import java.awt.Graphics;

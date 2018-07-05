@@ -1,8 +1,8 @@
-package com.javaBase.jvm.memory;
+package com.charhoo.javaBase.jvm.memory;
 
 
 /**
- * 设置每个线程占1M，建立1000个线程
+ * 锟斤拷锟斤拷每锟斤拷锟竭筹拷占1M锟斤拷锟斤拷锟斤拷1000锟斤拷锟竭筹拷
  * @author feng
  *
  */

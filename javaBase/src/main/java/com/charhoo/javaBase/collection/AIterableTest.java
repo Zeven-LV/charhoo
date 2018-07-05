@@ -1,4 +1,4 @@
-package com.javaBase.collection;
+package com.charhoo.javaBase.collection;
 
 import java.util.Iterator;
 import java.util.function.Consumer;

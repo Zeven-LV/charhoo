@@ -1,11 +1,13 @@
 package com.charhoo.javaBase.thread.sync;
 
 /**
- * 在没有同步时，method1和method2谁先执行完是不确定的
+ * 对静态方法的同步本质上是对类的同步（静态方法本质上是属于类的方法，而不是对象上的方法），
+ * 所以即使test和test2属于不同的对象，但是它们都属于SynchronizedTest类的实例，
+ * 所以也只能顺序的执行method1和method2，不能并发执行。
  */
-public class NoSync {
+public class SyncStaticMethod {
 
-    public void method1(){
+    public static synchronized void method1(){
         System.out.println("method1 start!");
         try {
             System.out.println("method1 execute!");
@@ -19,7 +21,7 @@ public class NoSync {
         System.out.println("method1 end!");
     }
 
-    public void method2(){
+    public static synchronized void method2(){
         System.out.println("method2 start!");
         try {
             System.out.println("method2 execute!");
@@ -31,19 +33,20 @@ public class NoSync {
     }
 
     public static void main(String[] args) {
-        NoSync noSync = new NoSync();
 
+        SyncStaticMethod syncStaticMethod1 = new SyncStaticMethod();
+        SyncStaticMethod syncStaticMethod2 = new SyncStaticMethod();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                noSync.method1();
+                syncStaticMethod1.method1();
             }
         }).start();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                noSync.method2();
+                syncStaticMethod2.method2();
             }
         }).start();
     }

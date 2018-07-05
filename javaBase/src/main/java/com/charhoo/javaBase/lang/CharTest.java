@@ -1,8 +1,8 @@
-package com.javaBase.lang;
+package com.charhoo.javaBase.lang;
 
 
 /**
- * charÕ¼2×Ö½Ú£¬16Î»£¬·¶Î§0-2^16
+ * charÕ¼2ï¿½Ö½Ú£ï¿½16Î»ï¿½ï¿½ï¿½ï¿½Î§0-2^16
  * 
  *
  */

@@ -1,15 +1,19 @@
 package com.charhoo.javaBase.thread.sync;
 
 /**
- * 在没有同步时，method1和method2谁先执行完是不确定的
+ * 虽然线程1和线程2都进入了对应的方法开始执行，但是线程2在进入同步块之前，需要等待线程1中同步块执行完成。
+ *
+ * 原理：每个对象有一个监视器锁（monitor）。当monitor被占用时就会处于锁定状态，线程执行monitorenter指令时尝试获取monitor的所有权
  */
-public class SyncProgram {
+public class SyncCode {
 
     public void method1(){
         System.out.println("method1 start!");
         try {
-            System.out.println("method1 execute!");
-            Thread.sleep(1000);
+            synchronized (this){
+                System.out.println("method1 execute!");
+                Thread.sleep(1000);
+            };
         } catch (InterruptedException e) {
             /**
              * https://www.ibm.com/developerworks/cn/java/j-jtp05236.html
@@ -22,8 +26,10 @@ public class SyncProgram {
     public void method2(){
         System.out.println("method2 start!");
         try {
-            System.out.println("method2 execute!");
-            Thread.sleep(1000);
+            synchronized (this){
+                System.out.println("method2 execute!");
+                Thread.sleep(1000);
+            };
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -31,7 +37,7 @@ public class SyncProgram {
     }
 
     public static void main(String[] args) {
-        SyncProgram noSync = new SyncProgram();
+        SyncCode noSync = new SyncCode();
 
         new Thread(new Runnable() {
             @Override

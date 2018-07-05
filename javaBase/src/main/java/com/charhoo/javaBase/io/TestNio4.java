@@ -1,4 +1,4 @@
-package com.javaBase.io;
+package com.charhoo.javaBase.io;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class TestNio4 {
 	
 	public static void main(String[] args) {
-		//»ñÈ¡¹ÜµÀ
+		//ï¿½ï¿½È¡ï¿½Üµï¿½
 		Pipe pipe;
 		try {
 			pipe = Pipe.open();
@@ -29,12 +29,12 @@ public class TestNio4 {
 			
 			ByteBuffer buf = ByteBuffer.allocate(1024);
 			
-			//»º³åÐ´Èë¹ÜµÀ
-			buf.put("Í¨¹ý¹ÜµÀ·¢ËÍÊý¾Ý".getBytes());
+			//ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Üµï¿½
+			buf.put("Í¨ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½".getBytes());
 			buf.flip();
 			sinkChannle.write(buf);
 			
-			//¶Á¹ÜµÀÊý¾Ýµ½»º³å
+			//ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½
 			Pipe.SourceChannel sourceChannle = pipe.source();
 			
 //			System.out.println(new String(buf.array(),0,buf.limit()));

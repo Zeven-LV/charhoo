@@ -1,4 +1,4 @@
-package com.javaBase.jvm.memory;
+package com.charhoo.javaBase.jvm.memory;
 
 import java.util.ArrayList;
 import java.util.List;

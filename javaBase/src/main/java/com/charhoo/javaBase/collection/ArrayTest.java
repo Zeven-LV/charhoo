@@ -1,7 +1,7 @@
-package com.javaBase.collection;
+package com.charhoo.javaBase.collection;
 
 /**
- * ÅÅÐò·½Ê½
+ * ï¿½ï¿½ï¿½ï¿½Ê½
  * @author feng
  *
  */

@@ -1,8 +1,8 @@
-package com.javaBase.thread;
+package com.charhoo.javaBase.thread;
 
 
 /*
- * ×ÓÏß³ÌÑ­»·10´Î£¬½Ó×ÅÖ÷Ïß³ÌÑ­»·100´Î£¬Ñ­»·50´Î
+ * ï¿½ï¿½ï¿½ß³ï¿½Ñ­ï¿½ï¿½10ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½Ñ­ï¿½ï¿½100ï¿½Î£ï¿½Ñ­ï¿½ï¿½50ï¿½ï¿½
 */
 
 public class TraditionalThreadCommunication {

@@ -1,10 +1,10 @@
-package com.javaBase.jvm.memory;
+package com.charhoo.javaBase.jvm.memory;
 
 /**
- * -XmxÓë-Xms
- * Xmn ĞÂÉú´ú
- * Xmn£ºnewRatio ĞÂÊ±´úÀÏÄê´ú±ÈÂÊ
- * Xmn£ºServiceRatio edenÓëserviver±ÈÀı
+ * -Xmxï¿½ï¿½-Xms
+ * Xmn ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * Xmnï¿½ï¿½newRatio ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * Xmnï¿½ï¿½ServiceRatio edenï¿½ï¿½serviverï¿½ï¿½ï¿½ï¿½
  * @author feng
  *
  */
