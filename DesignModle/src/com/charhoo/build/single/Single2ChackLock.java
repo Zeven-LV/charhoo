@@ -1,8 +1,11 @@
 package com.charhoo.build.single;
 
+/**
+ * 鍙岄噸妫�楠岄攣
+ */
 public class Single2ChackLock {
 
-	//用volatile修饰的变量，线程在每次使用变量的时候，都会读取变量修改后的最的值。volatile很容易被误用，用来进行原子性操作。
+	//锟斤拷volatile锟斤拷锟轿的憋拷锟斤拷锟斤拷锟竭筹拷锟斤拷每锟斤拷使锟矫憋拷锟斤拷锟斤拷时锟津，讹拷锟斤拷锟饺★拷锟斤拷锟斤拷薷暮锟斤拷锟斤拷锟街碉拷锟絭olatile锟斤拷锟斤拷锟阶憋拷锟斤拷锟矫ｏ拷锟斤拷锟斤拷锟斤拷锟斤拷原锟斤拷锟皆诧拷锟斤拷锟斤拷
 	private volatile static Single2ChackLock singleton;
 
 	private Single2ChackLock() {

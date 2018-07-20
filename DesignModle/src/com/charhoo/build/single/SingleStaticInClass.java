@@ -1,5 +1,9 @@
 package com.charhoo.build.single;
 
+/**
+ *
+ * 静态内部类
+ */
 public class SingleStaticInClass {
 
 	private static class SingletonHolder {

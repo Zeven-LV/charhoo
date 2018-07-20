@@ -1,4 +1,4 @@
-package com.charhoo.build.abstractfact;
+ package com.charhoo.build.abstractfact;
 
 public class ConcreateFactory implements AbstractFactory{
 
