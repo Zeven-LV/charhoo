@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/lang
+ http://www.springframework.org/schema/lang/spring-lang.xsd">
+    <bean name="user" class="com.charhoo.springlearn.bean.User">
+        <constructor-arg index="0">
+            <ref bean="person"/>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <ref bean="company"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="person" class="com.charhoo.springlearn.bean.Person" init-method="myInit" destroy-method="myDestroy">
+        <property name="name" value="ivy"></property>
+    </bean>
+
+    <bean id="company" class="com.charhoo.springlearn.bean.Company">
+        <property name="companyName" value="charhoo"></property>
+    </bean>
+
+    <bean id="myPostProcessor" class="com.charhoo.springlearn.ioc.MyBeanPostProcessor"></bean>
+
+    <!--
+    when the above bean (messenger) is instantiated, this custom
+    BeanPostProcessor implementation will output the fact to the system console
+    -->
+    <!--<bean class="com.sinoiov.etims.api.SpringPostProcessor"/>-->
+
+
+</beans>

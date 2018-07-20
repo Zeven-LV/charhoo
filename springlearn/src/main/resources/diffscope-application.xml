@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/lang
+ http://www.springframework.org/schema/lang/spring-lang.xsd">
+
+    <!--通过方法注入解决依赖作用域不同问题-->
+    <!--
+    <bean id="person" class="com.charhoo.springlearn.bean.Person" scope="prototype">
+        <property name="name" value="zhangsan"></property>
+    </bean>
+    <bean id="movie" class="com.charhoo.springlearn.bean.Movie" scope="singleton">
+        <lookup-method name="getPerson" bean="person"></lookup-method>
+    </bean>-->
+
+    <bean id="movieStar" class="com.charhoo.springlearn.bean.MovieStar">
+        <replaced-method name="getPerson" replacer="superStar"></replaced-method>
+    </bean>
+    <bean id="superStar" class="com.charhoo.springlearn.bean.SuperStar"></bean>
+
+</beans>
