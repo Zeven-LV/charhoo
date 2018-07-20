@@ -27,8 +27,9 @@ public class AtomicTest {
         private AtomicInteger count = new AtomicInteger(0);
         /**
          * AtomicInteger提供原子操作
-         * volatile修饰值
+         * volatile修饰value 不存在内存可见性问题
          * final修饰方法
+         * CAS算法：在加一之前先去看看value的值是多少，真正加的时候再去看一下，如果发现变了，不操作数据，否则为value加一。
          * */
         public void increment(){
             count.getAndIncrement();

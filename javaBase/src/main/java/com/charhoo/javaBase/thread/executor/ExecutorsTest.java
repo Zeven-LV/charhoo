@@ -1,20 +1,39 @@
 package com.charhoo.javaBase.thread.executor;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
+/**
+ * Executor(excute())
+ * -->ExecutorService(commit();shutdown();invoke())
+ * -->AbstractExecutorService
+ * -->ThreadPoolExecutor
+ */
 public class ExecutorsTest {
 
+    /*创建单线程线程池*/
     ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-
+    /*数量不固定线程池*/
     ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
-
-    ExecutorService fixedThreadPool = Executors.newFixedThreadPool(10);
-
-    ExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(3);
+    /*创建固定数量线程池*/
+    ExecutorService fixedThreadPool = Executors.newFixedThreadPool(2);
+    /*创建定时线程池*/
+    ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(3);
 
     public static void main(String[] args) {
-        int n_cpu = Runtime.getRuntime().availableProcessors();
-        System.out.println(n_cpu);
+        ExecutorsTest executorsTest = new ExecutorsTest();
+        ExecutorService executorService = executorsTest.fixedThreadPool;
+        for(int i=0;i<5;i++){
+//            executorService.execute(new MyRunable());
+            executorsTest.scheduledThreadPool.schedule(new MyRunable(),1, TimeUnit.SECONDS);
+        }
+//        executorService.shutdown();
+        executorsTest.scheduledThreadPool.shutdown();
+    }
+
+}
+
+class MyRunable implements Runnable {
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
     }
 }

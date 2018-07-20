@@ -2,6 +2,7 @@ package com.charhoo.javaBase.thread;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * 显式锁用法
@@ -9,6 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockTest {
 
     ReentrantLock lock = new ReentrantLock();
+    ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
 
     public static void main(String[] args) {
 

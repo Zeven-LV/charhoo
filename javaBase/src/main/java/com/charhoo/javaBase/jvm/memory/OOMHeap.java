@@ -11,7 +11,7 @@ import java.util.List;
 public class OOMHeap {
 	
 	public static void main(String[] args) {
-		List<Byte[]> list = new ArrayList<>();
+		List<Byte[]> list = new ArrayList<Byte[]>();
 		for(int i = 0;i<1024;i++){
 			System.out.println(i);
 			Byte[] byt = new Byte[1024*1024];
