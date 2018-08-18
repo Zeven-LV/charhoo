@@ -37,7 +37,7 @@ public class SyncCode {
     }
 
     public static void main(String[] args) {
-        SyncCode noSync = new SyncCode();
+        final SyncCode noSync = new SyncCode();
 
         new Thread(new Runnable() {
             @Override

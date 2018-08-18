@@ -1,5 +1,10 @@
 package com.charhoo.javaBase.thread.threadlocal;
 
+/**
+ * 1，主线程先设置ThreadLocalTest01实例test的longLocal，stringLocal
+ * 2，新线程再设置test的longLocal，stringLocal
+ * 3，主线程获取test的longLocal，stringLocal还是1设置的值
+ */
 public class ThreadLocalTest01 {
     ThreadLocal<Long> longLocal = new ThreadLocal<Long>();
     ThreadLocal<String> stringLocal = new ThreadLocal<String>();

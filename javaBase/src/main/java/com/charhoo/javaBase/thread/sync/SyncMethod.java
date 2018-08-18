@@ -36,7 +36,7 @@ public class SyncMethod {
     }
 
     public static void main(String[] args) {
-        SyncMethod noSync = new SyncMethod();
+        final SyncMethod noSync = new SyncMethod();
 
         new Thread(new Runnable() {
             @Override

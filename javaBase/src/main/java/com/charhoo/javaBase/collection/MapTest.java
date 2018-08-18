@@ -1,7 +1,9 @@
 package com.charhoo.javaBase.collection;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class MapTest {
@@ -11,10 +13,38 @@ public class MapTest {
         System.out.println(Integer.toBinaryString(keyHash));
         System.out.println(Integer.toBinaryString(15));
         System.out.println(15&keyHash);
-        /**
-         * 通过volatile关键字+synchronized代码块
-         */
+
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+    }
+
+    public void hashTableTest(){
+        Hashtable hashtable = new Hashtable();
+    }
+
+    /**
+     * hashMap及关键方法
+     */
+    public void hashMapTest(){
+        HashMap hashMap = new HashMap();
+        hashMap.put("1","1");
+        hashMap.size();
+        //hashMap.resize();
+
+    }
+
+    /**
+     *  extends AbstractMap implements NavigableMap<K,V>, Cloneable
+     */
+    public void treeMapTest(){
+        TreeMap treeMap = new TreeMap();
+    }
+
+    /**
+     * 通过volatile关键字+synchronized代码块
+     */
+    public void concurrentHashMapTest(){
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        concurrentHashMap.size();
     }
 
     /*

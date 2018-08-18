@@ -32,7 +32,7 @@ public class NoSync {
     }
 
     public static void main(String[] args) {
-        NoSync noSync = new NoSync();
+        final NoSync noSync = new NoSync();
 
         new Thread(new Runnable() {
             @Override

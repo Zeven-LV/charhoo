@@ -13,7 +13,7 @@ public class Test01 {
     }
 
     public static void main(String[] args) {
-        Test01 test01 = new Test01();
+        final Test01 test01 = new Test01();
 
         new Thread(new Runnable() {
             @Override

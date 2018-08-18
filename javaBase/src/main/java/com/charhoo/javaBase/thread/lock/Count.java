@@ -2,6 +2,9 @@ package com.charhoo.javaBase.thread.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 使用了ReentrantLock
+ */
 public class Count {
 
     private int i = 0;

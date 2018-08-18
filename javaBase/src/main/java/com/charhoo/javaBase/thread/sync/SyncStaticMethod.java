@@ -34,8 +34,8 @@ public class SyncStaticMethod {
 
     public static void main(String[] args) {
 
-        SyncStaticMethod syncStaticMethod1 = new SyncStaticMethod();
-        SyncStaticMethod syncStaticMethod2 = new SyncStaticMethod();
+        final SyncStaticMethod syncStaticMethod1 = new SyncStaticMethod();
+        final SyncStaticMethod syncStaticMethod2 = new SyncStaticMethod();
         new Thread(new Runnable() {
             @Override
             public void run() {
