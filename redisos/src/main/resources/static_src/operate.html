@@ -9,26 +9,30 @@
 <body id="js/operate.js">
 <div class="frame-box">
     <div class="center-top">
-        数据类型
-        <select id="data-type" >
-            <option value="string">string</option>
-            <option value="hash">hash</option>
-            <option value="list">list</option>
-            <option value="set">set</option>
-            <option value="sortset">sortset</option>
-        </select>
 
-        action
-        <input type="text" class="request-param" id="action" name="action">
-
-        key
-        <input type="text" class="request-param" id="key" name="key">
-
-        value
-        <input type="text" class="request-param" id="value" name="value">
-
-        <button id="submit" value="operate">operate</button>
     </div>
+    <div id="input-params" class="center-title">输入参数：<span id="input-params-span"></span></div>
+    <div>
+        <div id="input-area">
+            数据类型:
+            <select id="redis-type" >
+                <option value="string">string</option>
+                <option value="hash">hash</option>
+                <option value="list">list</option>
+                <option value="set">set</option>
+                <option value="sortset">sortset</option>
+            </select>
+            key:<input type="text" class="request-param" id="key" name="key">
+            value:<input type="text" class="request-param" id="value" name="value">
+        </div>
+
+        <div id="input-button">
+            <button id="put" value="put">添加</button>
+            <button id="delete" value="delete">删除</button>
+            <button id="get" value="get">查找</button>
+        </div>
+    </div>
+    <div id="execute-result" class="center-title">执行结果：<span id="execute-result-span"></span></div>
     <div id="result" class="result">
         操作结果
     </div>

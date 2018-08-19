@@ -27,22 +27,22 @@ define(['jquery','charhooui'],function($,charhooui) {
 
         this.initGrid = function () {
             var columns = [];
-            columns.push({display:"连接", name:"connect"});
-            columns.push({display:"操作", name:"action", render:function () {
+            columns.push({display:"连接", name:"connect", width:"80%"});
+            columns.push({display:"操作", name:"action", width:"20%", render:function () {
                     return "<span style='color:red' >修改</span>";
                 }});
             var option = {
                 columns: columns,
                 width:100,
                 height:200,
-                url:"connect/get"
+                url:"connect/getHistory"
             };
-            $("#main-grid").charhooGrid(option);
+            $("#history-connect-context").charhooGrid(option);
         };
 
         this.getCurrentConnect = function () {
             $.ajax({
-                url: "connect/getCurrentConnecct",
+                url: "connect/getCurrentConnection",
                 type: "GET",
                 data: {},
                 dataType: "json",

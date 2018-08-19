@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Converter {
 
-    Converter me;
+    /*Converter me;
 
     double casm_rr = 0.0D;
 
@@ -331,5 +331,5 @@ public class Converter {
         }
 
         return p1;
-    }
+    }*/
 }

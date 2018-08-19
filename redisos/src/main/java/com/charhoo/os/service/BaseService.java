@@ -1,7 +1,9 @@
 package com.charhoo.os.service;
 
+import com.charhoo.os.model.ResponseModel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.JedisCluster;
 
@@ -9,13 +11,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@Repository
+//@Repository
 public class BaseService {
+
+    private static Logger logger = LoggerFactory.getLogger(BaseService.class);
 
     @Autowired
     private JedisCluster jedisCluster;
 
-    public Object stringAction(String action, String key, String value){
+    public ResponseModel stringAction(String action, String key, String value){
 
         Object obj = null;
         try{
@@ -40,16 +44,22 @@ public class BaseService {
                     obj = jedisCluster.mget(key);
                     break;
                 case "del":
-                    obj = jedisCluster.set(key, value);
+                    obj = jedisCluster.del(key);
                     break;
                 default:
                     obj = "error";
                     break;
             }
+            if(obj == null){
+                return ResponseModel.getInstance(ResponseModel.STATUS_NORESULT,null,null);
+            }else{
+                return ResponseModel.getInstance(ResponseModel.STATUS_SUCCESS,obj,null);
+            }
         }catch (Exception e){
-            obj = e;
+            logger.error("stringAction action:{},key:{},value:{};ERROR:{}", action, key, value, e);
+            return ResponseModel.getInstance(ResponseModel.STATUS_FAIL,null,e.getMessage());
         }
-        return obj;
+
     }
 
     public Object hashAction(String action, String key, String value){

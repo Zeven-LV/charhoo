@@ -15,6 +15,7 @@ import java.util.Set;
 
 /**
  * RedisCluster custom config for springboot
+ *
  * @author ceruto
  */
 @Configuration
@@ -27,14 +28,16 @@ public class RedisClusterConfiguration {
 
 
     @Bean
-    public JedisCluster connectionFactory(){
+    public JedisCluster connectionFactory() {
 
         List<String> nodes = this.redisClusterProperties.getNodes();
 
         Set<HostAndPort> jedisClusterNodes = new HashSet<HostAndPort>();
-        for(String redisAddr : nodes ){
-            String[] datasourceArr = redisAddr.split(":");
-            jedisClusterNodes.add(new HostAndPort(datasourceArr[0], Integer.parseInt(datasourceArr[1])));
+        if (nodes != null) {
+            for (String redisAddr : nodes) {
+                String[] datasourceArr = redisAddr.split(":");
+                jedisClusterNodes.add(new HostAndPort(datasourceArr[0], Integer.parseInt(datasourceArr[1])));
+            }
         }
 
         JedisCluster jedisCluster = new JedisCluster(jedisClusterNodes);

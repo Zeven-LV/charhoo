@@ -7,13 +7,15 @@
     <script>require.loadCss([{src:"css/common.css"},{src:"css/connect.css"}]);</script>
 </head>
 <body id="js/connect.js">
-<div>
+<div class="center-main">
     <div class="center-top">
         redis服务<input type="text" class="redis-server-str">
-        <button id="do-connect" value="连接"/>
+        <button id="do-connect" type="button">连接</button>
     </div>
-    <div id="current-connect">当前连接：<span id="current-connect-span"></span></div>
-    <div id="main-grid"></div>
+    <div id="current-connect" class="center-title">当前连接：<span id="current-connect-span"></span></div>
+    <div id="current-connect-context">192.168.110.233</div>
+    <div id="history-connect" class="center-title">历史连接：<span id="history-connect-span"></span></div>
+    <div id="history-connect-context"></div>
 </div>
 </body>
 </html>

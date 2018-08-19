@@ -1,6 +1,7 @@
 package com.charhoo.os.controller;
 
 import com.charhoo.os.service.BaseService;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Api(value = "log", description = "日志")
 @RestController
 @RequestMapping("/log")
 public class LogController {

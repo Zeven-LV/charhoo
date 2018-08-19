@@ -23,7 +23,9 @@
             var tr=thead.insertRow(0);
             for(var colNo in p.columns){
                 var col = p.columns[colNo];
-                tr.insertCell().innerHTML=col.display;
+                var colEle = tr.insertCell();
+                colEle.width = col.width;
+                colEle.innerHTML=col.display;
             }
             $.ajax({
                 url: p.url,

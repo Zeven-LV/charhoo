@@ -49,8 +49,9 @@ public class RequestFilter implements Filter {
             ThisSession thisSession = ThreadContext.getSession();
             if(thisSession == null){
                 System.out.println("请先登录！");
-                ((HttpServletResponse)servletResponse).setStatus(403);
-                return;
+//                ((HttpServletResponse)servletResponse).setStatus(403);
+//                return;
+                filterChain.doFilter(servletRequest,servletResponse);
             }else{
                 //选择redis
                 filterChain.doFilter(servletRequest,servletResponse);

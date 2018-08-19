@@ -1,4 +1,4 @@
-package com.charhoo.os.consts;
+package com.charhoo.os.constants;
 
 public class ErrorCode {
 

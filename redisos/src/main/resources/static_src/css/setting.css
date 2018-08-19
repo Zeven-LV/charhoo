@@ -2,13 +2,6 @@
     height: 100%;
 }
 
-.node-stat{
-    width: 30%;
-    height: 20%;
-    background: red;
-    display: inline-block;
-}
-
 .result{
     width: 80%;
     height: 80%;
