@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class PrototypeSerializeFather implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -2015693705631066453L;
 	private String id;
@@ -41,8 +41,11 @@ public class PrototypeSerializeFather implements Serializable {
 			ByteArrayInputStream bi = new ByteArrayInputStream(bo.toByteArray());
 			ObjectInputStream oi = new ObjectInputStream(bi);
 			return oi.readObject();
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (ClassNotFoundException e){
 			e.printStackTrace();
 			return null;
 		}

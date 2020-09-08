@@ -2,14 +2,14 @@ package com.charhoo.behave.responsibility;
 
 public abstract class AbstractHandler {
 
-	private Handler handler;
+	private Handler next;
 
-	public Handler getHandler() {
-		return handler;
+	public Handler getNext() {
+		return next;
 	}
 
-	public void setHandler(Handler handler) {
-		this.handler = handler;
+	public void setNext(Handler next) {
+		this.next = next;
 	}
 
 }

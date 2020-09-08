@@ -4,11 +4,11 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Subject sub = new MySubject();//ÎÒµÄ¶©ÔÄ
-		sub.add(new SubObserver1());//¶©ÔÄ1-¹Û²ìÕß
-		sub.add(new SubObserver2());//¶©ÔÄ2-¹Û²ìÕß
+		Subject sub = new MySubject();//ï¿½ÒµÄ¶ï¿½ï¿½ï¿½
+		sub.add(new SubObserver1());//ï¿½ï¿½ï¿½ï¿½1-ï¿½Û²ï¿½ï¿½ï¿½
+		sub.add(new SubObserver2());//ï¿½ï¿½ï¿½ï¿½2-ï¿½Û²ï¿½ï¿½ï¿½
 
-		sub.operation();//²Ù×÷ÒÔºó²Å»áÏÔÏÖ³ö±ä¸ü
+		sub.operation();//ï¿½ï¿½ï¿½ï¿½ï¿½Ôºï¿½Å»ï¿½ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½ï¿½
 	}
 
 }

@@ -7,8 +7,8 @@ public class Test {
 		MyHandler h2 = new MyHandler("h2");
 		MyHandler h3 = new MyHandler("h3");
 
-		h1.setHandler(h2);
-		h2.setHandler(h3);
+		h1.setNext(h2);
+		h2.setNext(h3);
 
 		h1.operator();
 	}

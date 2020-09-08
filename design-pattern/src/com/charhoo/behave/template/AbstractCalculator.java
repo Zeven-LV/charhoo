@@ -2,22 +2,45 @@ package com.charhoo.behave.template;
 
 public abstract class AbstractCalculator {
 
-	/* Ö÷·½·¨£¬ÊµÏÖ¶Ô±¾ÀàÆäËü·½·¨µÄµ÷ÓÃ */
+	/**
+	 * å®šä¹‰äº†æ–¹æ³•çš„åŸºæœ¬éª¨æ¶å’Œæ‰§è¡Œé¡ºåº
+	 * @param exp
+	 * @param opt
+	 * @return
+	 */
 	public final int calculate(String exp, String opt) {
 		int array[] = split(exp, opt);
+		method2();
 		return calculate(array[0], array[1]);
 	}
 
-	/* ±»×ÓÀàÖØĞ´µÄ·½·¨ */
-	//protected±íÊ¾×¨ÃÅÎª×ÓÀàÌá¹©
-	abstract protected int calculate(int num1, int num2);
-
-	public int[] split(String exp, String opt) {
+	/**
+	 * ç§æœ‰æ–¹æ³•ï¼Œåªèƒ½ç”±çˆ¶ç±»æä¾›
+	 * @param exp
+	 * @param opt
+	 * @return
+	 */
+	private int[] split(String exp, String opt) {
 		String array[] = exp.split(opt);
 		int arrayInt[] = new int[2];
 		arrayInt[0] = Integer.parseInt(array[0]);
 		arrayInt[1] = Integer.parseInt(array[1]);
 		return arrayInt;
 	}
+
+	/**
+	 * é’©å­æ–¹æ³•, çˆ¶ç±»æä¾›é»˜è®¤å®ç°ï¼Œå­ç±»å¯é‡å†™
+	 */
+	public void method2(){
+		System.out.println("çˆ¶ç±»æä¾›é»˜è®¤å®ç°");
+	}
+
+	/**
+	 * æŠ½è±¡æ–¹æ³•ï¼Œéœ€è¦å­ç±»å®ç°
+	 * @param num1
+	 * @param num2
+	 * @return
+	 */
+	abstract protected int calculate(int num1, int num2);
 
 }
